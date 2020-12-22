@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Artillery report</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.0/d3.min.js' charset='utf-8'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.6.0/metricsgraphics.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/metrics-graphics/2.6.0/metricsgraphics.min.js"></script>
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link href='https://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.10.1/lodash.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.0/ace.js" charset="utf-8"></script>
+
+  <style>
+  body, p, li {
+    font-family: sans-serif;
+    font-size: 10pt;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: bold;
+  }
+
+  #errorsContainer > p {
+    color: #009900;
+  }
+
+  #footer {
+    padding: 1em;
+    font-size: 0.8em;
+    color: #999;
+    text-align: center;
+    margin-top: 1em;
+    background-color: #eee;
+  }
+  #editor {
+    font-size: 8pt;
+    height: 20em;
+  }
+  </style>
+
+  <script>
+  window.Report = {
+  "aggregate": {
+    "timestamp": "2020-12-22T05:20:29.746Z",
+    "scenariosCreated": 3000,
+    "scenariosCompleted": 1163,
+    "requestsCompleted": 1163,
+    "latency": {
+      "min": 30005.5,
+      "max": 119962.1,
+      "median": 60747.4,
+      "p95": 112354.9,
+      "p99": 118420.1
+    },
+    "rps": {
+      "count": 3000,
+      "mean": 10
+    },
+    "scenarioDuration": {
+      "min": 30007.2,
+      "max": 119966.9,
+      "median": 60749.5,
+      "p95": 112356.8,
+      "p99": 118422
+    },
+    "scenarioCounts": {
+      "Get Order Details City wise Arango :500: Jaipur": 751,
+      "Get Order Details City wise Arango :50: Indore": 784,
+      "Get Order Details City wise Arango :100: Surat": 738,
+      "Get Order Details City wise Arango :50: Patna": 727
+    },
+    "errors": {
+      "ESOCKETTIMEDOUT": 1837
+    },
+    "codes": {
+      "200": 21,
+      "500": 1142
+    },
+    "matches": 0,
+    "customStats": {},
+    "counters": {},
+    "scenariosAvoided": 0,
+    "phases": [
+      {
+        "duration": 60,
+        "arrivalRate": 5,
+        "name": "Warm up"
+      },
+      {
+        "duration": 60,
+        "arrivalRate": 15,
+        "name": "Ramp up"
+      },
+      {
+        "duration": 60,
+        "arrivalRate": 30,
+        "name": "Speed up"
+      }
+    ]
+  },
+  "intermediate": [
+    {
+      "timestamp": "2020-12-22T05:15:39.610Z",
+      "scenariosCreated": 49,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 49,
+        "mean": 5.03
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 13,
+        "Get Order Details City wise Arango :50: Indore": 14,
+        "Get Order Details City wise Arango :100: Surat": 12,
+        "Get Order Details City wise Arango :50: Patna": 10
+      },
+      "errors": {},
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 49,
+      "pendingRequests": 49,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:15:49.611Z",
+      "scenariosCreated": 50,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 50,
+        "mean": 5
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Indore": 17,
+        "Get Order Details City wise Arango :50: Patna": 11,
+        "Get Order Details City wise Arango :500: Jaipur": 13,
+        "Get Order Details City wise Arango :100: Surat": 9
+      },
+      "errors": {},
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 99,
+      "pendingRequests": 99,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:15:59.612Z",
+      "scenariosCreated": 50,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 50,
+        "mean": 5
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 9,
+        "Get Order Details City wise Arango :100: Surat": 12,
+        "Get Order Details City wise Arango :500: Jaipur": 14,
+        "Get Order Details City wise Arango :50: Indore": 15
+      },
+      "errors": {},
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 149,
+      "pendingRequests": 149,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:16:09.614Z",
+      "scenariosCreated": 51,
+      "scenariosCompleted": 29,
+      "requestsCompleted": 29,
+      "latency": {
+        "min": 30006.8,
+        "max": 30059.3,
+        "median": 30009.8,
+        "p95": 30017.2,
+        "p99": 30059.3
+      },
+      "rps": {
+        "count": 50,
+        "mean": 5
+      },
+      "scenarioDuration": {
+        "min": 30008.6,
+        "max": 30067.3,
+        "median": 30012,
+        "p95": 30020.3,
+        "p99": 30067.3
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 17,
+        "Get Order Details City wise Arango :500: Jaipur": 16,
+        "Get Order Details City wise Arango :50: Indore": 4,
+        "Get Order Details City wise Arango :100: Surat": 14
+      },
+      "errors": {},
+      "codes": {
+        "500": 29
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 171,
+      "pendingRequests": 170,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:16:19.617Z",
+      "scenariosCreated": 50,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 30006.3,
+        "max": 30015.3,
+        "median": 30008.2,
+        "p95": 30014.6,
+        "p99": 30015.3
+      },
+      "rps": {
+        "count": 50,
+        "mean": 5
+      },
+      "scenarioDuration": {
+        "min": 30008,
+        "max": 30020.4,
+        "median": 30010.2,
+        "p95": 30017,
+        "p99": 30020.4
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 15,
+        "Get Order Details City wise Arango :50: Patna": 12,
+        "Get Order Details City wise Arango :100: Surat": 11,
+        "Get Order Details City wise Arango :50: Indore": 12
+      },
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 171,
+      "pendingRequests": 170,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:16:29.622Z",
+      "scenariosCreated": 50,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 30005.9,
+        "max": 30013.4,
+        "median": 30007.5,
+        "p95": 30011.2,
+        "p99": 30013.4
+      },
+      "rps": {
+        "count": 51,
+        "mean": 5.1
+      },
+      "scenarioDuration": {
+        "min": 30007.5,
+        "max": 30015.3,
+        "median": 30009.5,
+        "p95": 30013.7,
+        "p99": 30015.3
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 14,
+        "Get Order Details City wise Arango :100: Surat": 15,
+        "Get Order Details City wise Arango :500: Jaipur": 9,
+        "Get Order Details City wise Arango :50: Indore": 12
+      },
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 171,
+      "pendingRequests": 171,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:16:39.623Z",
+      "scenariosCreated": 150,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 30006.7,
+        "max": 30017.5,
+        "median": 30008.1,
+        "p95": 30010.8,
+        "p99": 30017.5
+      },
+      "rps": {
+        "count": 150,
+        "mean": 15.09
+      },
+      "scenarioDuration": {
+        "min": 30008.7,
+        "max": 30019.4,
+        "median": 30010,
+        "p95": 30015.7,
+        "p99": 30019.4
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 39,
+        "Get Order Details City wise Arango :50: Patna": 36,
+        "Get Order Details City wise Arango :50: Indore": 38,
+        "Get Order Details City wise Arango :100: Surat": 37
+      },
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 271,
+      "pendingRequests": 271,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:16:49.626Z",
+      "scenariosCreated": 150,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 30005.7,
+        "max": 30030.9,
+        "median": 30007.6,
+        "p95": 30017.5,
+        "p99": 30030.9
+      },
+      "rps": {
+        "count": 150,
+        "mean": 15.08
+      },
+      "scenarioDuration": {
+        "min": 30007.7,
+        "max": 30032.6,
+        "median": 30009.7,
+        "p95": 30020.8,
+        "p99": 30032.6
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 39,
+        "Get Order Details City wise Arango :50: Patna": 29,
+        "Get Order Details City wise Arango :50: Indore": 48,
+        "Get Order Details City wise Arango :100: Surat": 34
+      },
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 371,
+      "pendingRequests": 371,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:16:59.629Z",
+      "scenariosCreated": 150,
+      "scenariosCompleted": 51,
+      "requestsCompleted": 51,
+      "latency": {
+        "min": 30005.5,
+        "max": 30015.3,
+        "median": 30007.3,
+        "p95": 30012,
+        "p99": 30015.3
+      },
+      "rps": {
+        "count": 150,
+        "mean": 15.08
+      },
+      "scenarioDuration": {
+        "min": 30007.5,
+        "max": 30017.1,
+        "median": 30009.1,
+        "p95": 30016.3,
+        "p99": 30017.1
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 47,
+        "Get Order Details City wise Arango :100: Surat": 31,
+        "Get Order Details City wise Arango :500: Jaipur": 33,
+        "Get Order Details City wise Arango :50: Indore": 39
+      },
+      "errors": {},
+      "codes": {
+        "500": 51
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 470,
+      "pendingRequests": 470,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:17:09.633Z",
+      "scenariosCreated": 150,
+      "scenariosCompleted": 92,
+      "requestsCompleted": 92,
+      "latency": {
+        "min": 30005.5,
+        "max": 98446.4,
+        "median": 30214.3,
+        "p95": 96430,
+        "p99": 97805.4
+      },
+      "rps": {
+        "count": 150,
+        "mean": 15.06
+      },
+      "scenarioDuration": {
+        "min": 30007.2,
+        "max": 98540.2,
+        "median": 30216,
+        "p95": 96490.1,
+        "p99": 97871.8
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 34,
+        "Get Order Details City wise Arango :500: Jaipur": 40,
+        "Get Order Details City wise Arango :100: Surat": 42,
+        "Get Order Details City wise Arango :50: Indore": 34
+      },
+      "errors": {},
+      "codes": {
+        "200": 20,
+        "500": 72
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 528,
+      "pendingRequests": 528,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:17:19.641Z",
+      "scenariosCreated": 150,
+      "scenariosCompleted": 39,
+      "requestsCompleted": 39,
+      "latency": {
+        "min": 34945.6,
+        "max": 41357.4,
+        "median": 38810.4,
+        "p95": 41158,
+        "p99": 41357.4
+      },
+      "rps": {
+        "count": 150,
+        "mean": 15.06
+      },
+      "scenarioDuration": {
+        "min": 34947.6,
+        "max": 41359.2,
+        "median": 38812.2,
+        "p95": 41159.9,
+        "p99": 41359.2
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 50,
+        "Get Order Details City wise Arango :50: Patna": 30,
+        "Get Order Details City wise Arango :100: Surat": 29,
+        "Get Order Details City wise Arango :50: Indore": 41
+      },
+      "errors": {},
+      "codes": {
+        "500": 39
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 639,
+      "pendingRequests": 639,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:17:29.642Z",
+      "scenariosCreated": 150,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 41475.9,
+        "max": 48013.8,
+        "median": 44747.1,
+        "p95": 47743.8,
+        "p99": 48013.8
+      },
+      "rps": {
+        "count": 150,
+        "mean": 15.06
+      },
+      "scenarioDuration": {
+        "min": 41477.8,
+        "max": 48015.7,
+        "median": 44748.9,
+        "p95": 47745.5,
+        "p99": 48015.7
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Indore": 36,
+        "Get Order Details City wise Arango :50: Patna": 44,
+        "Get Order Details City wise Arango :100: Surat": 33,
+        "Get Order Details City wise Arango :500: Jaipur": 37
+      },
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 739,
+      "pendingRequests": 739,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:17:39.643Z",
+      "scenariosCreated": 300,
+      "scenariosCompleted": 91,
+      "requestsCompleted": 91,
+      "latency": {
+        "min": 48008.1,
+        "max": 52003.1,
+        "median": 48154.6,
+        "p95": 51638.4,
+        "p99": 51971
+      },
+      "rps": {
+        "count": 300,
+        "mean": 30.03
+      },
+      "scenarioDuration": {
+        "min": 48009.9,
+        "max": 52005.8,
+        "median": 48156.5,
+        "p95": 51640.5,
+        "p99": 51980.5
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Indore": 78,
+        "Get Order Details City wise Arango :500: Jaipur": 67,
+        "Get Order Details City wise Arango :50: Patna": 79,
+        "Get Order Details City wise Arango :100: Surat": 76
+      },
+      "errors": {},
+      "codes": {
+        "500": 91
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 948,
+      "pendingRequests": 948,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:17:49.650Z",
+      "scenariosCreated": 300,
+      "scenariosCompleted": 38,
+      "requestsCompleted": 38,
+      "latency": {
+        "min": 52221.5,
+        "max": 59167.4,
+        "median": 56683.5,
+        "p95": 58965.2,
+        "p99": 59167.4
+      },
+      "rps": {
+        "count": 300,
+        "mean": 30
+      },
+      "scenarioDuration": {
+        "min": 52223.4,
+        "max": 59169.2,
+        "median": 56685.4,
+        "p95": 58967.1,
+        "p99": 59169.2
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 89,
+        "Get Order Details City wise Arango :100: Surat": 65,
+        "Get Order Details City wise Arango :50: Indore": 65,
+        "Get Order Details City wise Arango :500: Jaipur": 81
+      },
+      "errors": {},
+      "codes": {
+        "500": 38
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1210,
+      "pendingRequests": 1210,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:17:59.655Z",
+      "scenariosCreated": 301,
+      "scenariosCompleted": 51,
+      "requestsCompleted": 51,
+      "latency": {
+        "min": 59301.5,
+        "max": 65952.8,
+        "median": 62626.7,
+        "p95": 65676,
+        "p99": 65951.4
+      },
+      "rps": {
+        "count": 301,
+        "mean": 30.1
+      },
+      "scenarioDuration": {
+        "min": 59303.3,
+        "max": 65955.2,
+        "median": 62628.6,
+        "p95": 65678.1,
+        "p99": 65953.8
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 60,
+        "Get Order Details City wise Arango :100: Surat": 87,
+        "Get Order Details City wise Arango :50: Patna": 60,
+        "Get Order Details City wise Arango :50: Indore": 94
+      },
+      "errors": {},
+      "codes": {
+        "500": 51
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1460,
+      "pendingRequests": 1460,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:18:09.657Z",
+      "scenariosCreated": 300,
+      "scenariosCompleted": 91,
+      "requestsCompleted": 91,
+      "latency": {
+        "min": 65948.9,
+        "max": 70019.6,
+        "median": 66094,
+        "p95": 69575.7,
+        "p99": 69992.7
+      },
+      "rps": {
+        "count": 300,
+        "mean": 30.06
+      },
+      "scenarioDuration": {
+        "min": 65950.7,
+        "max": 70021.4,
+        "median": 66095.9,
+        "p95": 69578.3,
+        "p99": 69994.7
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :500: Jaipur": 79,
+        "Get Order Details City wise Arango :100: Surat": 87,
+        "Get Order Details City wise Arango :50: Patna": 67,
+        "Get Order Details City wise Arango :50: Indore": 67
+      },
+      "errors": {},
+      "codes": {
+        "500": 91
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1669,
+      "pendingRequests": 1669,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:18:19.660Z",
+      "scenariosCreated": 300,
+      "scenariosCompleted": 39,
+      "requestsCompleted": 39,
+      "latency": {
+        "min": 70230.9,
+        "max": 77305.8,
+        "median": 74758.3,
+        "p95": 77106.1,
+        "p99": 77305.8
+      },
+      "rps": {
+        "count": 300,
+        "mean": 30.06
+      },
+      "scenarioDuration": {
+        "min": 70232.8,
+        "max": 77307.4,
+        "median": 74760,
+        "p95": 77107.9,
+        "p99": 77307.4
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Indore": 88,
+        "Get Order Details City wise Arango :100: Surat": 73,
+        "Get Order Details City wise Arango :50: Patna": 66,
+        "Get Order Details City wise Arango :500: Jaipur": 73
+      },
+      "errors": {},
+      "codes": {
+        "500": 39
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1930,
+      "pendingRequests": 1930,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:18:29.661Z",
+      "scenariosCreated": 299,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 77433.1,
+        "max": 83957.3,
+        "median": 80699.3,
+        "p95": 83691.5,
+        "p99": 83957.3
+      },
+      "rps": {
+        "count": 299,
+        "mean": 29.96
+      },
+      "scenarioDuration": {
+        "min": 77435.2,
+        "max": 83960,
+        "median": 80701.9,
+        "p95": 83694.2,
+        "p99": 83960
+      },
+      "scenarioCounts": {
+        "Get Order Details City wise Arango :50: Patna": 73,
+        "Get Order Details City wise Arango :50: Indore": 82,
+        "Get Order Details City wise Arango :100: Surat": 71,
+        "Get Order Details City wise Arango :500: Jaipur": 73
+      },
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 2179,
+      "pendingRequests": 2179,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:18:39.663Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 91,
+      "requestsCompleted": 91,
+      "latency": {
+        "min": 83926.7,
+        "max": 88027.4,
+        "median": 84098.6,
+        "p95": 87581,
+        "p99": 88000.2
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": 83950.5,
+        "max": 88029.1,
+        "median": 84100.6,
+        "p95": 87583.2,
+        "p99": 88002.3
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 19
+      },
+      "codes": {
+        "500": 91
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 2069,
+      "pendingRequests": 2088,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:18:49.670Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 21,
+      "requestsCompleted": 21,
+      "latency": {
+        "min": 88235.5,
+        "max": 115135.5,
+        "median": 94096.4,
+        "p95": 104231.4,
+        "p99": 115135.5
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": 88237.4,
+        "max": 115165.7,
+        "median": 94098.1,
+        "p95": 104245.9,
+        "p99": 115165.7
+      },
+      "scenarioCounts": {},
+      "errors": {},
+      "codes": {
+        "200": 1,
+        "500": 20
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 2048,
+      "pendingRequests": 2067,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:18:59.672Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 95430.1,
+        "max": 101961.8,
+        "median": 98704.8,
+        "p95": 101696,
+        "p99": 101961.8
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": 95432.8,
+        "max": 101963.8,
+        "median": 98706.5,
+        "p95": 101697.9,
+        "p99": 101963.8
+      },
+      "scenarioCounts": {},
+      "errors": {},
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1998,
+      "pendingRequests": 2017,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:19:09.674Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 91,
+      "requestsCompleted": 91,
+      "latency": {
+        "min": 101957.3,
+        "max": 106036.7,
+        "median": 102103.1,
+        "p95": 105585,
+        "p99": 106009
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": 101959.1,
+        "max": 106038.2,
+        "median": 102105.3,
+        "p95": 105586.8,
+        "p99": 106010.7
+      },
+      "scenarioCounts": {},
+      "errors": {},
+      "codes": {
+        "500": 91
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1907,
+      "pendingRequests": 1926,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:19:19.678Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 39,
+      "requestsCompleted": 39,
+      "latency": {
+        "min": 106239,
+        "max": 113248.2,
+        "median": 109098.6,
+        "p95": 113048.9,
+        "p99": 113248.2
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": 106241,
+        "max": 113250,
+        "median": 109100.3,
+        "p95": 113050.8,
+        "p99": 113250
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 19
+      },
+      "codes": {
+        "500": 39
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1849,
+      "pendingRequests": 1887,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:19:29.682Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 50,
+      "requestsCompleted": 50,
+      "latency": {
+        "min": 113369.1,
+        "max": 119962.1,
+        "median": 116641.7,
+        "p95": 119632.9,
+        "p99": 119962.1
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": 113370.7,
+        "max": 119966.9,
+        "median": 116643.6,
+        "p95": 119635.8,
+        "p99": 119966.9
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 1
+      },
+      "codes": {
+        "500": 50
+      },
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1798,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:19:39.683Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 299
+      },
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1499,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:19:49.684Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 301
+      },
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 1198,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:19:59.686Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 300
+      },
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 898,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:20:09.688Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 300
+      },
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 598,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:20:19.689Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 300
+      },
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 298,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:20:29.691Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {
+        "ESOCKETTIMEDOUT": 298
+      },
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 0,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    },
+    {
+      "timestamp": "2020-12-22T05:20:29.721Z",
+      "scenariosCreated": 0,
+      "scenariosCompleted": 0,
+      "requestsCompleted": 0,
+      "latency": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "rps": {
+        "count": 0,
+        "mean": null
+      },
+      "scenarioDuration": {
+        "min": null,
+        "max": null,
+        "median": null,
+        "p95": null,
+        "p99": null
+      },
+      "scenarioCounts": {},
+      "errors": {},
+      "codes": {},
+      "matches": 0,
+      "customStats": {},
+      "counters": {},
+      "concurrency": 0,
+      "pendingRequests": 1837,
+      "scenariosAvoided": 0
+    }
+  ]
+};
+  </script>
+
+  <style>
+      h1 {
+        line-height: 200%;
+      }
+
+      body {
+          background-color: #fcfcfc;
+      }
+
+      .container {
+          width: 100%;
+          min-width: 960px;
+      }
+  </style>
+
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="row" id="header">
+  <div class="col-lg-4 col-lg-offset-4">
+    <pre style="font-size: 5pt; background-color: #fcfcfc; border: none;">
+            _   _ _ _                                                _
+  __ _ _ __| |_(_) | | ___ _ __ _   _      _ __ ___ _ __   ___  _ __| |_
+ / _` | '__| __| | | |/ _ \ '__| | | |    | '__/ _ \ '_ \ / _ \| '__| __|
+| (_| | |  | |_| | | |  __/ |  | |_| |    | | |  __/ |_) | (_) | |  | |_
+ \__,_|_|   \__|_|_|_|\___|_|   \__, |    |_|  \___| .__/ \___/|_|   \__|
+                                |___/              |_|
+
+    </pre>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h1 class="text-center" id="page-title">Test run on <span id="timestamp">date</span></h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-3">
+    <p><strong>Summary</strong></p>
+    <table class="table table-bordered table-hover table-condensed">
+      <tbody>
+        <tr>
+          <td>Test duration</td>
+          <td><span id="testDuration">0</span> sec</td>
+        </tr>
+        <tr>
+          <td>Scenarios created</td>
+          <td><span id="scenariosCreated">0</span></td>
+        </tr>
+
+        <tr>
+          <td>Scenarios completed</td>
+          <td><span id="scenariosCompleted">0</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col-lg-5" id="scenarioCountsContainer">
+    <div>
+      <strong>Scenario counts:</strong>
+
+      <p></p>
+
+      <table class="table table-bordered table-hover table-condensed" id="scenarioCounts">
+      </table>
+    </div>
+  </div>
+
+  <div class="col-lg-1">
+    <div id="codesContainer">
+      <strong>Codes</strong>
+
+      <p></p>
+
+      <table class="table table-bordered table-hover table-condensed" id="codes">
+      </table>
+    </div>
+  </div>
+
+  <div class="col-lg-3">
+    <div id="errorsContainer">
+      <strong>Errors</strong>
+
+      <p></p>
+
+      <table class="table table-bordered table-hover table-condensed" id="errors">
+      </table>
+    </div>
+  </div>
+</div> <!-- /.row -->
+
+<div class="row">
+  <div class="text-center col-lg-12">
+    <h2>Charts</h2>
+  </div>
+</div>
+
+<div class="row">
+  <div class="latency-histogram text-center col-lg-12"></div>
+</div>
+
+<div class="row">
+  <div class="latency text-center col-lg-12"></div>
+</div>
+
+<div class="latency-legend"></div>
+
+<div class="row">
+
+</div>
+
+<div class="row">
+  <div class="concurrency text-center col-lg-12"></div>
+</div>
+
+<div class="row">
+  <div class="rps-mean text-center col-lg-12"></div>
+</div>
+<div class="row">
+  <div class="rps-count text-center col-lg-12"></div>
+</div>
+
+<div class="row">
+  <div class="codes-line text-center col-lg-12"></div>
+</div>
+<div class="row">
+  <div class="errors-line text-center col-lg-12"></div>
+</div>
+
+
+  
+
+
+</div>
+
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    <h3 class="text-center">Raw report data</h3>
+    <p>This is the raw JSON stats output that the report was generated from.</p>
+    <div id="editor">
+    </div>
+  </div>
+</div>
+
+<script>
+var editor = ace.edit("editor");
+editor.getSession().setMode("ace/mode/javascript");
+editor.setValue(JSON.stringify(Report, null, 2));
+editor.gotoLine(1);editor.setHighlightActiveLine(false);
+
+var l = _;
+
+$('#timestamp').html(moment(Report.aggregate.timestamp).format('DD MMM YYYY HH:mm:SS'));
+$('#testDuration').html(l.size(Report.intermediate) * 10);
+$('#scenariosCompleted').html(Report.aggregate.scenariosCompleted);
+$('#scenariosCreated').html(Report.aggregate.scenariosCreated);
+
+var markers = [];
+if(l.size(Report.phases) > 0) {
+  markers = l.foldl(Report.phases, function(acc, phase, index) {
+    var label = phase.name || 'Phase ' + (index + 1);
+    var timestamp = (index === 0) ? 0 : Report.phases[index - 1].duration + acc[index - 1].timestamp;
+
+    acc.push({
+      timestamp: timestamp,
+      label: label
+    });
+
+    return acc;
+  }, []);
+}
+
+if (l.size(Report.aggregate.scenarioCounts) > 0) {
+  l.each(Report.aggregate.scenarioCounts, function(count, name) {
+    var $tdName = $('<td>' + name + '</td>');
+    var percentage = Math.round(count / Report.aggregate.scenariosCreated * 100 * 1000) / 1000;
+    var $tdCount = $('<td>' + count + ' (' + percentage + '%)' + '</td>');
+    var $el = $('<tr></tr>')
+      .append($tdName)
+      .append($tdCount)
+      .appendTo($('#scenarioCounts'));
+  });
+} else {
+  $('#scenarioCountsContainer').hide();
+}
+
+if (l.size(Report.aggregate.codes) > 0) {
+  l.each(Report.aggregate.codes, function(count, code) {
+    var anchor = '';
+    if (code >= 100 && code < 200) {
+      anchor = '#1xx_Informational';
+    } else if (code >= 200 && code < 300) {
+      anchor = '#2xx_Success';
+    } else if (code >= 300 && code < 400) {
+      anchor = '#3xx_Redirection';
+    } else if (code >= 400 && code < 500) {
+      anchor = '#4xx_Client_Error';
+    } else if (code >= 500 && code < 600) {
+      anchor = '#5xx_Server_Error';
+    }
+
+    var $a = $('<a>' + code + '</a>').attr('href', 'https://en.wikipedia.org/wiki/List_of_HTTP_status_codes' + anchor);
+    var $td = $('<td></td>').append($a);
+    var $el = $('<tr></tr>')
+      .append($td)
+      .append($('<td>' + count + '</td>'))
+      .appendTo($('#codes'));
+  });
+} else {
+  $('#codesContainer').hide();
+}
+
+if (l.size(Report.aggregate.errors) > 0) {
+  l.each(Report.aggregate.errors, function(count, code) {
+    var $el = $('<tr></tr>')
+      .append($('<td>' + code + '</td>'))
+      .append($('<td>' + count + '</td>'))
+      .appendTo($('#errors'));
+  });
+} else {
+  $('#errorsContainer > p').html('&#10004; Test completed without network or OS errors.');
+}
+
+var histogramData = l.map(Report.aggregate.latency, function(v, k) { return {bin: k, value: v} });
+
+MG.data_graphic({
+  chart_type: 'bar',
+  x_label: 'Percentile',
+  y_label: '(ms)',
+  animate_on_load: true,
+  title: 'Overall Latency Distribution',
+  description: 'Distribution of all observed response latencies',
+  target: '.latency-histogram',
+  data: histogramData,
+  x_accessor: 'bin',
+  y_accessor: 'value',
+  binned: true,
+  height: 250,
+  interpolate: 'monotone',
+  padding_percentage: 0,
+  bar_orientation: 'vertical',
+  width: 450
+});
+
+var chartData = l.map(
+  window.Report.intermediate,
+  function(o,i) {
+    return {
+      timestamp: i*10+10,
+
+      rpsMean: o.rps.mean,
+      rpsCount: o.rps.count,
+      concurrency: o.concurrency,
+      latencyMax: o.latency.max,
+      latencyp99: o.latency.p99,
+      latencyp95: o.latency.p95,
+      latencyMedian: o.latency.median,
+      latencyMin: o.latency.min
+    }
+  });
+
+//
+// Response codes
+//
+
+if (l.size(Report.aggregate.codes) > 0) {
+  var codesData = l.foldl(Report.intermediate, function(acc, o, i) {
+    var res = {};
+    res.timestamp = i*10+10;
+    l.each(o.codes, function(count, code) {
+      res[code] = count;
+    });
+    acc.push(res);
+    return acc;
+  }, []);
+  var uniqueCodes = l.foldl(Report.intermediate, function(acc, o) {
+    l.each(o.codes, function(count, code) {
+      if (l.indexOf(acc, code) === -1) {
+        acc.push(code);
+      }
+    });
+    return acc;
+  }, []);
+
+  MG.data_graphic({
+    x_label: 'Time',
+    y_label: 'Count',
+    title: 'HTTP codes',
+    description: 'Occurence of HTTP response codes',
+    target: '.codes-line',
+    data: codesData,
+    x_accessor: 'timestamp',
+    y_accessor: uniqueCodes,
+    legend: uniqueCodes,
+    right: 50,
+    chart_type: 'line',
+    area: false,
+    markers: markers,
+    width: 900
+  });
+}
+
+//
+// Errors
+//
+
+if (l.size(Report.aggregate.errors) > 0) {
+  var errorData = l.foldl(Report.intermediate, function(acc, o, i) {
+    var res = {};
+    res.timestamp = i*10+10;
+    l.each(o.errors, function(count, name) {
+      res[name] = count;
+    });
+    acc.push(res);
+    return acc;
+  }, []);
+  var uniqueErrors = l.foldl(Report.intermediate, function(acc, o) {
+    l.each(o.errors, function(count, name) {
+      if (l.indexOf(acc, name) === -1) {
+        acc.push(name);
+      }
+    });
+    return acc;
+  }, []);
+
+  MG.data_graphic({
+    title: 'Error Codes',
+    description: 'Occurence of error codes',
+    target: '.errors-line',
+    data: errorData,
+    x_accessor: 'timestamp',
+    y_accessor: uniqueErrors,
+    chart_type: 'line',
+    area: false,
+    markers: markers
+  });
+
+}
+
+//
+// Latency
+//
+MG.data_graphic({
+  chart_type: 'line',
+  x_label: 'Time',
+  y_label: '(ms)',
+  animate_on_load: true,
+  area: false,
+  title: "Latency At Intervals",
+  description: "Latency values at different points during the test run",
+  data: chartData,
+  target: '.latency',
+  width: 900,
+  x_accessor: 'timestamp',
+  y_accessor: ['latencyMin', 'latencyMedian', 'latencyp95', 'latencyMax'],
+  legend: ['min', 'p50', 'p95', 'max'],
+  //legend_target: '.latency-legend',
+  right: 50,
+  interpolate: 'monotone',
+  mouseover: function(d, i) {
+  },
+  markers: markers
+        });
+
+            MG.data_graphic({
+            animate_on_load: true,
+            area: false,
+            y_label: 'Count',
+            x_label: 'Time',
+            title: 'Concurrent users',
+            description: 'Concurrent users',
+            data: chartData,
+            target: '.concurrency',
+            x_accessor: 'timestamp',
+            y_accessor: ['concurrency'],
+            interpolate: 'monotone',
+            markers: markers,
+            width: 900
+            });
+
+MG.data_graphic({
+  animate_on_load: true,
+  area: false,
+  y_label: 'Count',
+  x_label: 'Time',
+  title: 'Mean RPS',
+  description: 'Mean requests per second',
+  data: chartData,
+  target: '.rps-mean',
+  x_accessor: 'timestamp',
+  y_accessor: ['rpsMean'],
+  interpolate: 'monotone',
+  markers: markers,
+  width: 900
+});
+
+MG.data_graphic({
+  animate_on_load: true,
+  area: false,
+  y_label: 'Count',
+  x_label: 'Time',
+  title: 'RPS Count',
+  description: 'Count of requests per second',
+  data: chartData,
+  target: '.rps-count',
+  x_accessor: 'timestamp',
+  y_accessor: ['rpsCount'],
+  interpolate: 'monotone',
+  markers: markers,
+  width: 900
+});
+</script>
+<div id="footer">
+  <footer>This report was created with <a href="https://artillery.io">Artillery</a> - free open-source load-testing for HTTP and WebSockets</footer>
+</div>
+</body>
+</html>
